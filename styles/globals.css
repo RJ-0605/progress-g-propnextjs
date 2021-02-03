@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&family=Prata&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Open Sans',  Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Prata', Georgia, 'Times New Roman', Times, serif;
+}
+
+a {
+  @apply relative overflow-hidden;
+}
+
+.navbar {
+  z-index: 99999;
+}
+
+.link-with-hover-effect::before {
+  @apply block w-full h-full bg-blue-500 absolute left-0 transition-all;
+  content: "";
+  top: 100%;
+  z-index: -1000;
+}
+
+.link-with-hover-effect::after {
+  @apply transition-all;
+  content: "\2192";
+  display: inline-block;
+  opacity: 0%;
+  position: relative;
+  left: -10px;
+}
+
+.link-with-hover-effect:hover::after {
+  opacity: 100%;
+  left: 10px;
+}
+
+.link-with-hover-effect:hover::before {
+  top: 0;
+}
+
+.search-btn svg {
+  transform: rotate(0deg);
+}
+
+.search-btn:hover svg {
+  transform: rotate(-20deg);
+}
